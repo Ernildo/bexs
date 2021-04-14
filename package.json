@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "pkg .",
+    "start": "node src/index.js"
+  },
   "keywords": [],
   "author": "Ernildo Porfirio",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  }
 }
