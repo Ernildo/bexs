@@ -5,7 +5,7 @@ function Server(config) {
 
    const { request } = config;
    
-   const local = path.join(__dirname, '../../rest/app.js');
+   const local = path.join(__dirname, '../../api/app.js');
    
    const app = fork(local, { silent: true });
 

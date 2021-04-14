@@ -1,6 +1,5 @@
-const Transform = require('./trasnsform');
-const Terminal = require('./Terminal');
-const Server = require('./Server');
+const { Terminal, Server } = require('../view');
+const { Transform } = require('../model');
 
 function Interface() {
 
@@ -43,10 +42,5 @@ function Interface() {
       }
    }
 }
-
-const interface = Interface();
-interface.on('get', () => {
-   return 'FFF-GAT';
-})
 
 module.exports = Interface;
