@@ -1,6 +1,12 @@
 function Transform(inputLine) {
    
-   const regex = /^[A-Z]{3,3}-[A-Z]{3,3}$/;   
+   // const regex = /^[A-Z]{3,3}-[A-Z]{3,3}$/;
+
+   const regexList = [
+      /^[A-Z]{3,3}-[A-Z]{3,3}$/,
+      /^[A-Z]{3,3}-[A-Z]{3,3}-[0-9]{1,}$/
+   ];
+
    const keys = ['origin', 'destination', 'price'];
 
    const lineToObject = () => {
@@ -15,7 +21,10 @@ function Transform(inputLine) {
 
    return {
       get test() {
-         return regex.test(inputLine);
+         // return regex.test(inputLine);
+         return regexList
+            .map(el => el.test(inputLine))
+            .includes(true);
       },
 
       get parse() {
