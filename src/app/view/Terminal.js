@@ -27,7 +27,7 @@ function Terminal(config) {
       print(msg) {
          console.log(msg);
       }
-   }
+   };
 }
 
 module.exports = Terminal;

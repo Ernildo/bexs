@@ -1,4 +1,4 @@
-const Transform = require('./Transform');
+const Transform = require('./transform/Transform');
 
 module.exports = {
    Transform

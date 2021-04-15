@@ -1,7 +1,5 @@
 function Transform(inputLine) {
    
-   // const regex = /^[A-Z]{3,3}-[A-Z]{3,3}$/;
-
    const regexList = [
       /^[A-Z]{3,3}-[A-Z]{3,3}$/,
       /^[A-Z]{3,3}-[A-Z]{3,3}-[0-9]{1,}$/
@@ -21,7 +19,6 @@ function Transform(inputLine) {
 
    return {
       get test() {
-         // return regex.test(inputLine);
          return regexList
             .map(el => el.test(inputLine))
             .includes(true);
