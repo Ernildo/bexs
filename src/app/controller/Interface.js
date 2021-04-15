@@ -41,7 +41,7 @@ function Interface() {
             const msg = {
                statusCode: res ? 200 : 400,
                statusText: res || 'error'
-            }
+            };
 
             server.response(msg);
          });
