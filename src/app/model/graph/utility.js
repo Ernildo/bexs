@@ -47,10 +47,8 @@ const visited = function checkObjectInList(list, object) {
 };
 
 const hasDestination = function filterListThatHasDestination(list, destination) {
-
-   return list
-      .map(obj => getAtribute(obj).key === destination)
-      .includes(true);
+   
+   return list.filter(obj => getAtribute(obj).key === destination);
 };
 
 const formattedList = function transformArrayOfObjectsInList(list) {

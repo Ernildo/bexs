@@ -44,12 +44,12 @@ function Graph(listNodes = []) {
    };
 
    const bestWay = function(routes, origin, destination) {
-
+      
       const best = routes
          .filter(way => hasDestination(way, destination))
          .map(formattedList)
          .reduce(minorList);
-
+   
       return (best.length ? [origin].concat(best) : []);
    }
 
@@ -72,7 +72,7 @@ function Graph(listNodes = []) {
             const way = findWay(node, destination); 
             routes.push(way); 
          }
-         
+
          return bestWay(routes, origin, destination); 
       }
    };

@@ -33,20 +33,22 @@ function CSV(localFile) {
          file.on('close', () => events['close-each']())
       },
 
-      list(callback) {
-         const file = getFile();
-         const placeList = [];
-
-         file.on('line', line => {
-            line
-               .split(',')
-               .filter((_, index) => (index >= 0 && index < 2))
-               .forEach(el => {
-                  if (!placeList.includes(el)) placeList.push(el);
-               });
+      list() {
+         return new Promise(resover => {
+            const file = getFile();
+            const placeList = [];
+   
+            file.on('line', line => {
+               line
+                  .split(',')
+                  .filter((_, index) => (index >= 0 && index < 2))
+                  .forEach(el => {
+                     if (!placeList.includes(el)) placeList.push(el);
+                  });
+            });
+   
+            file.on('close', () => resover(placeList));
          });
-
-         file.on('close', () => callback(placeList));
       },
 
       write(data, cb) {}, 

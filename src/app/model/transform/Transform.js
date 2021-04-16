@@ -30,7 +30,6 @@ function Transform(inputLine) {
          }
       }
    }
-
 }
 
 module.exports = Transform;

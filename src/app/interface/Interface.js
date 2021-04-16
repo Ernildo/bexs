@@ -2,6 +2,9 @@ const Terminal = require('./Terminal');
 const Server = require('./Server');
 const { Transform } = require('../model');
 
+const path = require('path');
+const fs = require('fs');
+
 function Interface() {
 
    const events = {
@@ -14,6 +17,7 @@ function Interface() {
 
       if (trasnsform.test) {
          const response = events[type](trasnsform.parse);
+         // formartar a resposta aqui...
          callback(response);
       } else {
          callback(null);
@@ -25,7 +29,7 @@ function Interface() {
       
       read(line) {
          method(line, 'get', (res) => {
-            const msgSuccess = `the best route is: ${res}`;
+            const msgSuccess = `best route: ${res}`;
             const msgError = 'Syntax error';
 
             const msg = (res) ? msgSuccess : msgError;
@@ -51,6 +55,16 @@ function Interface() {
    return {
       on(eventName, callback) {
          if (Object.keys(events).includes(eventName)) events[eventName] = callback;
+      },
+
+      get file() {
+         const nameFile = path.join(__dirname, `../${process.argv[2]}`);
+
+         if (!nameFile) throw new Error('arquivo não informado');
+
+         if (fs.existsSync(nameFile)) return nameFile; 
+         
+         throw new Error('impossível localizar o arquivo'); 
       }
    };
 }
