@@ -43,14 +43,14 @@ function Graph(listNodes = []) {
       return way;
    };
 
-   const bestWay = function(caminhos, origem, destino) {
+   const bestWay = function(routes, origin, destination) {
 
-      const best = caminhos
-         .filter(way => hasDestination(way, destino))
+      const best = routes
+         .filter(way => hasDestination(way, destination))
          .map(formattedList)
          .reduce(minorList);
 
-      return (best.length ? [origem].concat(best) : []);
+      return (best.length ? [origin].concat(best) : []);
    }
 
    return {
