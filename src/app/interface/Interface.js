@@ -18,7 +18,8 @@ function Interface() {
       if (trasnsform.test) {
          const response = events[type](trasnsform.parse);
          // formartar a resposta aqui...
-         callback(response);
+         const test = trasnsform.output(response).terminal
+         callback(test);
       } else {
          callback(null);
       }

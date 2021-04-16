@@ -36,7 +36,7 @@ const { Graph, CSV } = require('./model');
       }); 
       
       interface.on('get', ({origin, destination}) => {
-         return graph.bestRoute(origin, destination); 
+         return graph.bestRoute(origin, destination);
       });
    
    

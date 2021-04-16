@@ -28,6 +28,21 @@ function Transform(inputLine) {
          if (this.test) {
             return lineToObject();
          }
+      },
+
+      output(list = []) {
+         return {
+            get server() {},
+            
+            get terminal() {
+               const endIndex = (list.length - 1);
+               const aux = list
+                  .filter((_, index) => index != endIndex) //['aaa', 'bbb', 'ccc']
+                  .join(' - ');
+
+               return `${aux} > $${list[endIndex]}`;
+            }   
+         }
       }
    }
 }
