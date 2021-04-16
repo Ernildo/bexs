@@ -1,4 +1,4 @@
-const { Interface } = require('./controller');
+const { Interface } = require('./interface');
 
 const interface = Interface();
 

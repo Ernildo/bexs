@@ -1,4 +1,5 @@
-const { Terminal, Server } = require('../view');
+const Terminal = require('./Terminal');
+const Server = require('./Server');
 const { Transform } = require('../model');
 
 function Interface() {
@@ -37,7 +38,6 @@ function Interface() {
    const server = Server({
       request({ type, content }) {
          method(content, type, (res) => {
-            
             const msg = {
                statusCode: res ? 200 : 400,
                statusText: res || 'error'
