@@ -55,12 +55,4 @@ function CSV(localFile) {
    };
 }
 
-// const local = path.join(__dirname, 'teste.csv');
-// const file = CSV(local);
-
-// file.on('close-each', () => console.log('finalizou o arquivo'));
-
-// file.eachLine(data => console.log(data));
-// file.list(console.log);
-
 module.exports = CSV;
