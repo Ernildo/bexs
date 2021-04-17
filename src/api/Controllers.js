@@ -20,7 +20,20 @@ function Controllers() {
             });
       },
 
-      insertRouter() {}
+      insertRouter(req, res) {
+         const { route } = req.body;
+
+         const info = {
+            type: 'push',
+            content: route
+         };
+
+         processParent
+            .send(info)
+            .reciver(({ statusCode, data }) => {
+               res.status(statusCode).json({ data });
+            })
+      }
    };
 }
 

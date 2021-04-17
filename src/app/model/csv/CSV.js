@@ -6,10 +6,11 @@ const path = require('path');
 function CSV(localFile) {
    
    const events = {
-      'close-each': () => {}
+      'close-each': () => {},
+      'close-write': () => {}
    };
 
-   const getFile = function() {
+   const getFileInput = function() {
       const file = readline.createInterface({
          input: fs.createReadStream(localFile, { encoding: 'ascii' })
       });
@@ -23,7 +24,7 @@ function CSV(localFile) {
       },
 
       eachLine(callback) {
-         const file = getFile();
+         const file = getFileInput();
          
          file.on('line', line => {
             const data = line.split(',');
@@ -35,7 +36,7 @@ function CSV(localFile) {
 
       list() {
          return new Promise(resover => {
-            const file = getFile();
+            const file = getFileInput();
             const placeList = [];
    
             file.on('line', line => {
@@ -51,7 +52,14 @@ function CSV(localFile) {
          });
       },
 
-      write(data, cb) {}, 
+      write(data = []) {
+         const route = `\n${data.join(',')}`;
+         
+         fs.appendFileSync(localFile, route, {encoding: 'ascii'});
+         events['close-write'](data);
+         
+         return data;
+      }, 
    };
 }
 

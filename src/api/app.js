@@ -4,9 +4,11 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const { bestRouter } = Controllers();
+const { bestRouter, insertRouter } = Controllers();
 
+// best_route/GRU-CDA
 app.get('/best_route/:route', bestRouter);
+app.post('/insert_route', insertRouter);
 
 const PORT = 3000;
 app.listen(PORT);

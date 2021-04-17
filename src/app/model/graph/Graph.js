@@ -64,6 +64,10 @@ function Graph(listNodes = []) {
          }
       },
 
+      insertNode(...nodes) {
+         for (const node of nodes) listEdges[node] = [];
+      },
+
       bestRoute(origin, destination) {
          
          const routes = [];
