@@ -15,8 +15,8 @@ function Controllers() {
 
          processParent
             .send(info)
-            .reciver(({ statusCode, statusText }) => {
-               res.status(statusCode).json({ statusText });
+            .reciver(({ statusCode, data }) => {
+               res.status(statusCode).json({ data });
             });
       },
 

@@ -17,9 +17,7 @@ function Interface() {
 
       if (trasnsform.test) {
          const response = events[type](trasnsform.parse);
-         // formartar a resposta aqui...
-         const test = trasnsform.output(response).terminal
-         callback(test);
+         callback(response);
       } else {
          callback(null);
       }
@@ -30,10 +28,9 @@ function Interface() {
       
       read(line) {
          method(line, 'get', (res) => {
-            const msgSuccess = `best route: ${res}`;
             const msgError = 'Syntax error';
 
-            const msg = (res) ? msgSuccess : msgError;
+            const msg = (res) ? `best route: ${Transform().output(res).terminal}` : msgError;
             
             terminal.print(msg);
          });
@@ -43,11 +40,12 @@ function Interface() {
    const server = Server({
       request({ type, content }) {
          method(content, type, (res) => {
+            
             const msg = {
                statusCode: res ? 200 : 400,
-               statusText: res || 'error'
+               data: res || 'error'
             };
-
+            
             server.response(msg);
          });
       }

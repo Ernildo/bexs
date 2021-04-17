@@ -33,14 +33,23 @@ function Transform(inputLine) {
       output(list = []) {
          return {
             get server() {},
-            
-            get terminal() {
-               const endIndex = (list.length - 1);
-               const aux = list
-                  .filter((_, index) => index != endIndex) //['aaa', 'bbb', 'ccc']
-                  .join(' - ');
 
-               return `${aux} > $${list[endIndex]}`;
+            get terminal() {
+               
+               let response = ''; 
+
+               if (list.length > 0) {
+                  const endIndex = (list.length - 1);
+                  const str = list
+                     .filter((_, index) => index != endIndex) //['aaa', 'bbb', 'ccc']
+                     .join(' - ');
+   
+                  response = `${str} > $${list[endIndex]}`;
+               } else {
+                  response = 'route unavailable';
+               }
+
+               return response;
             }   
          }
       }

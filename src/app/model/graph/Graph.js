@@ -68,12 +68,19 @@ function Graph(listNodes = []) {
          
          const routes = [];
          
-         for (node of listEdges[origin]) {
-            const way = findWay(node, destination); 
-            routes.push(way); 
+         const desKey = Object.keys(listEdges).includes(destination); 
+         const orgKey = Object.keys(listEdges).includes(origin);
+         
+         if (orgKey && desKey) {
+            for (const node of listEdges[origin]) {
+               const way = findWay(node, destination); 
+               routes.push(way); 
+            }
+   
+            return bestWay(routes, origin, destination); 
          }
 
-         return bestWay(routes, origin, destination); 
+         return routes;
       }
    };
 }
