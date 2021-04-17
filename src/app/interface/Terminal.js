@@ -9,7 +9,7 @@ function Terminal(config) {
       output: process.stdout
    });
    
-   const getLine = () => {
+   const getLine = function() {
       scan.question(printDefault, (answar) => {
          const line = answar.toString('utf8');
          read(line);
