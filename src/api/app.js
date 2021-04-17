@@ -6,7 +6,6 @@ app.use(express.json());
 
 const { bestRouter, insertRouter } = Controllers();
 
-// best_route/GRU-CDA
 app.get('/best_route/:route', bestRouter);
 app.post('/insert_route', insertRouter);
 
