@@ -19,7 +19,6 @@
 <h4 align="center"> 
 	✅  Rota de Viagem 🏆 Finalizado!  ✅
 </h4>
-<br/>
 
 ## 💡 Sobre
 
