@@ -5,19 +5,13 @@
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=appveyor&message=1.0.0&label=version&color=blue"/>
+   <img src="https://img.shields.io/static/v1?style=for-the-badge&message=1.0.0&label=version&color=blue"/>
 
-   <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=appveyor&message=MIT&label=licence&color=green"/>
+   <img src="https://img.shields.io/static/v1?style=for-the-badge&message=MIT&label=licence&color=green"/>
 
-   <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=appveyor&message=7.5.4&label=NPM&color=red"/>
+   <img src="https://img.shields.io/static/v1?style=for-the-badge&message=7.5.4&label=NPM&color=red"/>
+
+   <img src="https://img.shields.io/static/v1?style=for-the-badge&message=14.15.1&label=node&color=#27ae60"/>
+
+   <img src="https://img.shields.io/static/v1?style=for-the-badge&message=es6&label=js&color=yellow"/>
 </p>
-
-<!-- <img src="https://img.shields.io/static/v1?label=Teste&message=Ernildo&color=blue&style=for-the-badge&logo=ghost"/>
-
-### Features
-
-- (x) Cadastro de usuário
-- (x) Cadastro de cliente
-- (x) Cadastro de produtos
-
-<h3>🛠 Tecnologias</h3> -->
