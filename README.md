@@ -42,7 +42,7 @@ Esse sistema faz parte de uma avaliação de competência através de um teste p
 Seu objetivo é simular um aplicativo de viagem. Sendo assim, ele deve encontrar o melhor caminho possível entre dois lugares. Ou seja, o sistema lê um arquivo \*.csv que contém informações sobre diversas rotas, insere esses dados em um **grafo** (estrutura de dados), manipula essas informações utilizando como base o algoritmo de _dijkstra_ e devolve o trajeto que possui o menor preço.
 
 <br>
-Preferencialmente o arquivo com as rotas deve estar contido na pasta raiz do projeto. Além disso, deve ser estruturado da seguinte forma:
+Obrigatoriamente o arquivo com as rotas deve estar contido na pasta raiz do projeto. Além disso, deve ser estruturado da seguinte forma:
 <br>
 
 ```csv
