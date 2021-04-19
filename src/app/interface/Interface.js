@@ -57,8 +57,8 @@ function Interface() {
       },
 
       get file() {
-         const nameFile = path.join(__dirname, `../${process.argv[2]}`);
-
+         const nameFile = path.join(__dirname, `../../../${process.argv[2]}`);
+         
          if (!nameFile) throw new Error('arquivo não informado');
 
          if (fs.existsSync(nameFile)) return nameFile; 

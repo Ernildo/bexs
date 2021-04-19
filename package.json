@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pkg .",
-    "start": "node src/index.js"
+    "start": "node src/app/main.js"
   },
   "keywords": [],
   "author": "Ernildo Porfirio",
