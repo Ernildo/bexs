@@ -20,7 +20,20 @@
 	✅  Rota de Viagem 🏆 Finalizado!  ✅
 </h4>
 
-## 💡 Sobre
+<br>
+
+<p align="center">
+ <a href="#sobre">Sobre</a> •
+ <a href="#arquitetura">Arquitetura</a> • 
+ <a href="#instalacao">Instalação</a> • 
+ <a href="#como_usar">Como Usar</a> • 
+</p>
+
+<br>
+
+<h2>
+   💡 <a id="sobre">Sobre</a>
+</h2>
 
 <br>
 Esse sistema faz parte de uma avaliação de competência através de um teste prático admisional.
@@ -54,7 +67,9 @@ O sistema foi escrito puramente em Javascript (ES6+) e é executado em cima da r
 
 <hr/>
 
-## 🧰 Arquitetura
+<h2>
+   🧰 <a id="arquitetura"> Arquitetura </a>
+</h2>
 
 <br>
 
@@ -99,7 +114,9 @@ O conceito de IPC (_inter processessing comunication_) foi utilizado para faazer
 
 <hr/>
 
-## ⚙️ Instalação
+<h2>
+   ⚙️ <a id="instalacao">Instalação</a>
+</h2>
 
 <br>
 Para instalar o sistema realize os seguinte execute os seguites passos:
@@ -117,3 +134,109 @@ git clone https://github.com/Ernildo/bexs.git
 ```
 npm install
 ```
+
+<hr>
+
+<h2>
+   ⚒️ <a id="como_usar">Como Usar</a>
+</h2>
+
+<br>
+
+Após a instalação, entre no diretório raiz do projero e insira o arquivo .csv que contém as rotas.
+<br>
+
+- Antes:
+
+```
+bexs
+|--src
+|--.gitignore
+|--README.md
+|--package-lock.json
+|--package.json
+```
+
+- Despois:
+
+```
+bexs
+|--src
+|--.gitignore
+|--README.md
+|--package-lock.json
+|--package.json
+|--<seu_arquivo_de_rotas>.csv
+```
+
+### Executando a aplicação
+
+<br>
+
+Ao executar a aplicação, o usuário poderá se comunicar com o sistema por duas formas: **Console do terminal** e/ou **API REST**
+
+<br>
+
+Para executar a aplicação, na pasta do projeto, digite o seguinte comando:
+
+```npm
+npm start <nome_do_arquivo_de_rotas>.csv
+```
+
+Ao digitar o comando anterior, o sistema irá ocupar o terminal com a interface de console. Toda via, o servidor com suporte a API estará rodando em background e já poderá receber requests imediatamente.
+
+#### INTERAGINDO PELO CONSOLE
+
+<br>
+
+A interação pelo console do terminal possibilitará ao usuário apenas vizualizar a melhor rota. Para isso, o usuário deve informar um input no padrão "DE-PARA".
+
+Exemplo:
+
+```
+$please enter the route: GRU-CGD
+$best route: GRU - BRC - SCL - ORL - CDG > $40
+
+$please enter the route: BRC-CDG
+$best route: BRC - ORL > $30
+
+$please enter the route: AAA-BBB
+$best route: route unavailable
+
+$please enter the route: qualquer outra coisa
+$syntax error
+
+$please enter the route:
+```
+
+<br>
+
+#### INTERAGINDO PELA API REST
+
+<br>
+
+Para testar a api, recomenda-se o uso de alguma ferramenta de suporte a requisições como o **Postman** ou **Insomnia**
+
+<br>
+
+Documentação da API
+
+<br>
+
+OBS: Para testar a aplicação rodando em uma máquina local, o **Endpoint** padrão é: `http://localhost:3000`
+
+<br>
+
+- Para consultar o melhor caminho:
+
+|    Rota     | Método HTTP | Parâmeto | Formato do parâmetro | Resposta |      Exemplo de Resposta       |       Exemplo       |
+| :---------: | :---------: | :------: | :------------------: | :------: | :----------------------------: | :-----------------: |
+| /best_route |     GET     |   SIM    |       /DE-PARA       |   JSON   | `{ data: ['AAA', 'BBB', 10] }` | /best_route/AAA-BBB |
+
+<br>
+
+- Para inserir um novo itinerário:
+
+|     Rota      | Método HTTP | Tipo do Corpo da Requisição | Formato do Corpo da Requisição | Tipo de Resposta |      Exemplo de Resposta       |
+| :-----------: | :---------: | :-------------------------: | :----------------------------: | :--------------: | :----------------------------: |
+| /insert_route |    POST     |            JSON             |  `{ "route": "AAA-BBB-10" }`   |       JSON       | `{ data: ['AAA', 'BBB', 10] }` |
