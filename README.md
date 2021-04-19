@@ -39,10 +39,10 @@
 Esse sistema faz parte de uma avaliação de competência através de um teste prático admissional.
 <br><br>
 
-Seu objetivo é simular um aplicativo de viagem. Sendo assim, ele deve encontrar o melhor caminho possível entre dois lugares. Ou seja, o sistema lê um arquivo \*.csv que contém informações sobre diversas rotas, insere esses dados em um **grafo** (estrutura de dados), manipula essas informações utilizando como base o algorítmo de _dijkstra_ e devolve o trajeto que possui o menor preço.
+Seu objetivo é simular um aplicativo de viagem. Sendo assim, ele deve encontrar o melhor caminho possível entre dois lugares. Ou seja, o sistema lê um arquivo \*.csv que contém informações sobre diversas rotas, insere esses dados em um **grafo** (estrutura de dados), manipula essas informações utilizando como base o algoritmo de _dijkstra_ e devolve o trajeto que possui o menor preço.
 
 <br>
-Preferencialmente o arquivo com as rotas deve está contido na pasta raiz do projeto. Além disso, deve ser estruturado da seguinte forma:
+Preferencialmente o arquivo com as rotas deve estar contido na pasta raiz do projeto. Além disso, deve ser estruturado da seguinte forma:
 <br>
 
 ```csv
@@ -63,7 +63,7 @@ SCL,ORL,20
 
 #### Observações
 
-O sistema foi escrito puramente em Javascript (ES6+) e é executado em cima da runtime NodeJs. Com excessão do _express_ para fazer a abstração das requsições na API REST, não foi utilizado nenhuma outra biblioteca externa aos módulos padrão.
+O sistema foi escrito puramente em Javascript (ES6+) e é executado em cima da runtime NodeJs. Com exceção do _express_ para fazer a abstração das requisições na API REST, não foi utilizado nenhuma outra biblioteca externa aos módulos padrão.
 
 <hr/>
 
@@ -99,18 +99,18 @@ app
 
 - O diretório **interface** contém os arquivos que implementam a interface entre o usuário e a máquina. Portanto é aqui que são implementados as abstrações tanto do Terminal quanto do Servidor por meio da API REST.
 
-- O diretório **model** contém os arquivos que implementam as asbtrações de grafos, módulos de validações de string e afins.
+- O diretório **model** contém os arquivos que implementam as abstrações de grafos, módulos de validações de string e afins.
 
 ### Paradigmas
 
-A aplicação foi inteiramente desenvolvida em javascript. Sendo assim, tendo em vista o carater dinâmico intrínseco a linguagem, três paradigmas diferentes podem ser encontrados nos códigos fonte:
+A aplicação foi inteiramente desenvolvida em javascript. Sendo assim, tendo em vista o caráter dinâmico intrínseco à linguagem, três paradigmas diferentes podem ser encontrados nos códigos fonte:
 
 - **Orientação a Objetos**: Utilizado basicamente com funções fábrica.
 - **Orientação a Eventos**: Utilizado na implementação de módulos que disparam algum evento sempre que algum gatilho for disparado.
 
 ### Observações
 
-O conceito de IPC (_inter processessing comunication_) foi utilizado para faazer a aplicação principal (app) se comunicar com o servidor (api).
+O conceito de IPC (_inter processessing comunication_) foi utilizado para fazer a aplicação principal (app) se comunicar com o servidor (api).
 
 <hr/>
 
@@ -119,7 +119,7 @@ O conceito de IPC (_inter processessing comunication_) foi utilizado para faazer
 </h2>
 
 <br>
-Para instalar o sistema realize os seguinte execute os seguites passos:
+Para instalar o sistema realize os seguinte execute os seguintes passos:
 <br>
 <br>
 
@@ -129,7 +129,7 @@ Para instalar o sistema realize os seguinte execute os seguites passos:
 git clone https://github.com/Ernildo/bexs.git
 ```
 
-- Na pasta do projeto, execute o seguinte comando para baixar as depdências:
+- Na pasta do projeto, execute o seguinte comando para baixar as dependências:
 
 ```
 npm install
@@ -143,7 +143,7 @@ npm install
 
 <br>
 
-Após a instalação, entre no diretório raiz do projero e insira o arquivo .csv que contém as rotas.
+Após a instalação, entre no diretório raiz do projeto e insira o arquivo .csv que contém as rotas.
 <br>
 
 - Antes:
